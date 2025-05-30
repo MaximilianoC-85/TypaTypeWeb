@@ -17,20 +17,19 @@ body {
   align-items: center;
   background: #fff;
   padding: 1rem 2rem;
-  position:sticky;
+  position:static;
   top: 0;
   z-index: 10;
 }
-
-.logo span {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #000;
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-bottom: 10px;
 }
 
-.logo .punto {
-  color: #e6007e;
-}
+
+
 
 .nav-links {
   list-style: none;
@@ -42,8 +41,10 @@ body {
 .nav-links a {
     display: inline-block;
   text-decoration: none;
+      font-size:x-large;
   color: #000;
   padding: 0.5rem 1rem;
+    margin-bottom: 3px;
   font-weight: bold;
   border-radius: 8px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -53,6 +54,8 @@ body {
   background-color: #e6007e;
   color: white;
 }
+
+
 
 .carrito {
   font-size: 1.2rem;
@@ -64,12 +67,10 @@ body {
 
 .contenido {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* el segundo GIF ocupa más espacio */
+  grid-template-columns: 1fr 2fr;
   gap: 2rem;
   padding: 3rem 2rem;
-  align-items: center;
   justify-content: center;
-  height: 80%;
 }
 
 .logo-central {
@@ -127,18 +128,21 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Menú desplegable oculto */
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 100%; /* justo debajo del dropbtn */
+  left: 50%; /* nos posicionamos desde el centro */
+  transform: translateX(-50%); /* desplazamos la mitad del ancho hacia la izquierda */
+  height: 250px;
+  padding: 20px 10px;
   background-color: #009688;
   border-radius: 12px;
-  min-width: 180px;
+  min-width: 300px;
   z-index: 1000;
   transition: opacity 0.3s ease;
 }
+
 
 /* Items del dropdown */
 .dropdown-content li {
@@ -149,14 +153,12 @@ body {
     margin-left: 10px;
   width: 85%;
   display: block;
-  padding: 0.3rem 1rem 0rem 1rem; /* sin padding abajo */
-  margin-bottom: 0.5rem; /* espacio entre el texto y la línea */
   color: white;
   text-decoration: none;
-  border-bottom: 2px solid white;
-  border-radius: 0;
   font-weight: 500;
   transition: font-weight 0.1s ease;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 
@@ -176,6 +178,12 @@ body {
 .dropdown:hover .dropbtn {
   background-color: #e6007e;
   color: white;
+}
+.linea-blanca {
+  height: 2px;
+  width: 80%;
+  background-color: white;
+  margin: 0 auto;
 }
 
 
@@ -269,7 +277,6 @@ body {
 main {
   display: flex;
   position: relative;
-  min-height: 100vh;
 }
 
 /* Panel lateral de filtro */
