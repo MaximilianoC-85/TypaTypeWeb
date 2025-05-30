@@ -279,20 +279,96 @@ body {
 }
 
 /* --------------------Fuentes----------------------- */
-.fuentes {
-  background-color: white;
-  color: #000;
-  font-family: 'Public Sans', sans-serif;
-  line-height: 1.6;
+/* Contenedor principal para posicionar */
+main.fuentes {
+  position: relative; /* para posicionar hijos relativos a este */
+  display: flex;
+  align-items: flex-start; /* para que quede alineado arriba */
+  gap: 1rem; /* espacio entre btn y panel */
+  background-color: #fff;
 }
 
-main {
-  display: flex;
+/* Botón filtro cerrado (visible solo cuando filtro está cerrado) */
+.btn-filtrar {
+  cursor: pointer;
+    height: 700px;
+  background-color: #ddd;
+  display: inline-flex;
+  align-items: start;
+  padding: 6px 10px;
+  margin-left: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
   position: relative;
+  z-index: 20;
 }
+
+/* Oculto cuando filtro activo */
+.btn-filtrar.oculto {
+  display: none;
+}
+
+/* Botón filtro activo (visible solo cuando filtro está abierto) */
+.btn-filtrar-activo {
+  height: 700px;
+  align-items: start;
+  cursor: pointer;
+  display: none; /* oculto por defecto */
+  padding: 6px 10px;
+ border-bottom: 1px solid #ccc;
+ border-left:1px solid #ccc ;
+ border-top: 1px solid #ccc;
+  border-radius:  6px;
+  border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  background-color: #ddd;
+  position: absolute;
+    margin-left: 10px;
+  z-index: 40;
+}
+
+/* Cuando filtro está abierto mostramos este botón */
+.btn-filtrar-activo.visible {
+  display: inline-flex;
+}
+
+/* Panel filtro flotante */
+.filtro-panel {
+  position: absolute;
+  color: #000;
+  left: 100px; /* a la izquierda o donde quieras */
+  width: 280px;
+  height: 700px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  z-index: 30;
+  transition: opacity 0.3s ease;
+}
+
+/* Oculto */
+.filtro-panel.oculto {
+  display: none;
+}
+.filtro-bloque{
+  padding-bottom: 15px;
+}
+
+/* Contenido principal opaco cuando filtro está activo */
+.panel.opaco {
+  opacity: 0.4;
+  pointer-events: none; /* opcional, para que no se pueda interactuar */
+  transition: opacity 0.5s ease;
+}
+
 
 /* Panel lateral de filtro */
-.filtro-panel {
+.panel {
   color: white;
   margin-left: 10px;
   width: 399px;
@@ -305,23 +381,14 @@ main {
   font-family: 'encode sans', 'Regular';
 }
 
-.filtro-panel h3 {
+.panel h3 {
   font-weight: bold;
   margin-bottom: 1rem;
   font-size: 18pt;
 }
 
-.filtro-panel p {
+.panel p {
   line-height: 1.4;
-}
-
-.btn-filtrar {
-  color: #00A588;
-  height: 500px;
-  background-color: rgb(224, 217, 217);
-  margin-left: 5px;
-  border-radius: 12px;
-  padding: 8px 8px;
 }
 
 /* ---------- Contenido Principal: fuentes ---------- */

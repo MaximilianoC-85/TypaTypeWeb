@@ -36,10 +36,89 @@
   </header>
 
   <main class="fuentes">
-    <a class="btn-filtrar">
-      <img src="img/Filtrar.webp" alt="Filtrar" />
-    </a>
-    <aside class="filtro-panel">
+<!-- Botón para abrir panel -->
+<a class="btn-filtrar activo">
+  <img src="img/Filtrar.webp" alt="Filtrar" />
+</a>
+  <a class="btn-filtrar-activo">
+  <img src="img/FiltrarActivo.webp" alt="Filtrar" />
+</a>
+<!-- Panel de filtros oculto al inicio -->
+<aside class="filtro-panel oculto">
+
+  <div class="filtro-header">
+    <div class="titulo-seccion">
+      <img src="img/Atributos.webp" alt="Aa">
+      <div class="titulo">Atributos</div>
+    </div>
+  </div>
+
+  <!-- Clasificación -->
+  <section class="filtro-bloque">
+    <h4>Clasificación</h4>
+    <div class="btn-group">
+      <button>Serif</button>
+      <button>Sans Serif</button>
+      <button>Script</button>
+      <button>Monospace</button>
+      <button>Slab Serif</button>
+    </div>
+  </section>
+
+  <!-- Cantidad de estilos -->
+  <section class="filtro-bloque">
+    <h4>Cantidad de Estilos</h4>
+    <div class="range-control">
+      <input type="range" min="1" max="18" value="1">
+      <div class="range-labels">
+        <span>1</span><span>+18</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contraste -->
+  <section class="filtro-bloque">
+    <h4>Contraste del Trazo</h4>
+    <div class="btn-group">
+      <button>Alto</button>
+      <button>Medio</button>
+      <button>Bajo</button>
+    </div>
+  </section>
+
+  <!-- Expresividad -->
+  <section class="filtro-bloque">
+    <h4>Expresividad</h4>
+    <div class="btn-group">
+      <button>Formal</button>
+      <button>Informal</button>
+      <button>Retro</button>
+      <button>Divertida</button>
+      <button>Artística</button>
+    </div>
+  </section>
+
+  <!-- Escritura -->
+  <section class="filtro-bloque">
+    <div class="titulo-seccion">
+      <img src="img/Escritura.webp" alt="Worldwide">
+      <div class="titulo">Escritura</div>
+    </div>
+    <h4>Sistemas de Escritura</h4>
+    <div class="btn-group">
+      <button>Latino</button>
+      <button>Cirílico</button>
+      <button>Griego</button>
+      <button>Árabe</button>
+      <button>Hebreo</button>
+      <button>Chino</button>
+      <button>Japonés</button>
+      <button>Coreano</button>
+    </div>
+  </section>
+</aside>
+
+    <aside class="panel">
       <h3>Fuentes para textos</h3>
       <p>
         Cuando se trata de componer un texto de grandes dimensiones, la elección tipográfica es clave, ya que será el
@@ -69,6 +148,7 @@
       </ul>
     </section>
   </main>
-</body>
+<script src="js/script.js"></script>
 
+</body>
 </html>
