@@ -136,7 +136,7 @@ body {
   transform: translateX(-50%); /* desplazamos la mitad del ancho hacia la izquierda */
   height: 250px;
   padding: 20px 10px;
-  background-color: #009688;
+  background-color: #00A588;
   border-radius: 12px;
   min-width: 300px;
   z-index: 1000;
@@ -166,7 +166,7 @@ body {
 /* Hover: solo negrita */
 .dropdown-content a:hover {
   font-weight: bold;
-  background-color: #009688;
+  background-color: #00A588;
 }
 
 
@@ -263,7 +263,7 @@ body {
 }
 
 .btn-enviar:hover {
-  background-color: #c2006b;
+  background-color: #E6007E;
 }
 
 /* --------------------Fuentes----------------------- */
@@ -301,7 +301,7 @@ main {
   line-height: 1.4;
 }
 .btn-filtrar{
-      color: 00A588;
+      color: #00A588;
     height: 500px;
     background-color: rgb(224, 217, 217);
     margin-left: 5px;
@@ -330,14 +330,14 @@ main {
 .fuentes-listado li {
   text-align: center;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid 00A588;
+  border-bottom: 1px solid #00A588;
   padding-bottom: 0.3rem;
 }
 
 /* ---------- Enlace de cada fuente ---------- */
 .fuente-link {
   text-decoration: none;
-  color: #009688;
+  color: #00A588;
   font-size: 2.4rem;
   font-weight: 400;
   transition: color 0.2s ease;
