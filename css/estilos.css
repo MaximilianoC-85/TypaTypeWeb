@@ -1,0 +1,337 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 1rem 2rem;
+  position:sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo span {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.logo .punto {
+  color: #e6007e;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+    padding: 0 0.3rem;
+  font-weight: bold;
+}
+
+.nav-links a.active {
+  background: #e6007e;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+}
+
+.carrito {
+  font-size: 1.2rem;
+}
+
+.seccion-principal {
+  padding: 3rem 2rem;
+}
+
+.contenido {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* el segundo GIF ocupa más espacio */
+  gap: 2rem;
+  padding: 3rem 2rem;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+.logo-central {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+
+.logo-central.primero {
+  width: 250px; /* menos espacio */
+  margin-right: 50px;
+}
+
+.logo-central.segundo {
+    max-height: 500px;
+  width: 600px; /* más espacio */
+  position: static;
+}
+
+
+.texto-nosotros {
+    margin-left: 20px;
+  flex: 1 1 400px;
+}
+
+.texto-nosotros h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.texto-nosotros h1 span {
+  color: white;
+}
+
+.texto-nosotros h1 strong {
+  color: #e6007e;
+}
+
+.texto-nosotros p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+/* Contenedor del dropdown */
+.dropdown {
+  position: relative;
+}
+
+/* Botón sin fondo por defecto */
+.dropbtn {
+  color: #000;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Menú desplegable oculto */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #009688;
+  border-radius: 12px;
+  min-width: 180px;
+  z-index: 1000;
+  padding: 0.5rem 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Items del dropdown */
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.3rem 1rem 0rem 1rem; /* sin padding abajo */
+  margin-bottom: 0.5rem; /* espacio entre el texto y la línea */
+  color: white;
+  text-decoration: none;
+  border-bottom: 4px solid white; /* tipo subrayado separado */
+  border-radius: 20px;
+  font-weight: 500;
+  transition: font-weight 0.1s ease;
+}
+
+
+
+/* Hover: solo negrita */
+.dropdown-content a:hover {
+  font-weight: bold;
+}
+
+
+/* Mostrar el menú + cambiar fondo al hacer hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #e6007e;
+  color: white;
+}
+
+/* --------------------Contactos----------------------- */
+/* Sección contacto */
+.contacto {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem 2rem;
+  font-family: sans-serif;
+}
+
+/* Título */
+.formulario-contacto h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.fucsia {
+  color: #e6007e;
+  font-weight: 900;
+}
+
+.punto {
+  color: #e6007e;
+}
+
+/* Texto debajo del título */
+.formulario-contacto p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+/* Formulario */
+.formulario-contacto {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Etiquetas */
+.formulario-contacto label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Inputs y textarea */
+.formulario-contacto input,
+.formulario-contacto textarea {
+  background-color: #888;
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  width: 100%;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.formulario-contacto textarea {
+  border-radius: 30px;
+  resize: none;
+}
+.btn-enviar {
+  background-color: #e6007e;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 0.9rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.btn-enviar:hover {
+  background-color: #c2006b;
+}
+
+/* --------------------Fuentes----------------------- */
+.fuentes {
+  background-color: white;
+  color: #000;
+  font-family: 'Public Sans', sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Panel lateral de filtro */
+.filtro-panel {
+    color: white;
+    margin-left: 10px;
+  width: 250px;
+  height: fit-content;
+  background-color:  #009688;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.filtro-panel h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.filtro-panel p {
+  line-height: 1.4;
+}
+.btn-filtrar{
+      color: #009688;
+    height: 500px;
+    background-color: rgb(224, 217, 217);
+    margin-left: 5px;
+    border-radius: 12px;
+    padding: 8px 8px;
+}
+
+/* ---------- Contenido Principal: fuentes ---------- */
+.fuentes-listado {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.fuentes-listado ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.fuentes-listado li {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #009688;
+  padding-bottom: 0.3rem;
+}
+
+/* ---------- Enlace de cada fuente ---------- */
+.fuente-link {
+  text-decoration: none;
+  color: #009688;
+  font-size: 2.4rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.fuente-link:hover {
+  color: #e6007e;
+}
