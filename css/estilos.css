@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Faustina&family=Fira+Sans&family=Fleur+De+Leah&family=Grenze+Gotisch&family=Hachi+Maru+Pop&family=Inter&family=Lato&family=Manrope&family=Merriweather&family=Monoton&family=Mulish&family=Noto+Serif&family=Public+Sans&family=Roboto&family=Rosario&family=Rubik&family=Rye&family=Shantell+Sans&family=Source+Serif+4&family=Turret+Road&family=Work+Sans&family=Bungee&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -17,10 +19,11 @@ body {
   align-items: center;
   background: #fff;
   padding: 1rem 2rem;
-  position:static;
+  position: static;
   top: 0;
   z-index: 10;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -39,12 +42,12 @@ body {
 }
 
 .nav-links a {
-    display: inline-block;
+  display: inline-block;
   text-decoration: none;
-      font-size:x-large;
+  font-size: x-large;
   color: #000;
   padding: 0.5rem 1rem;
-    margin-bottom: 3px;
+  margin-bottom: 3px;
   font-weight: bold;
   border-radius: 8px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -58,7 +61,7 @@ body {
 
 
 .carrito {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .seccion-principal {
@@ -82,19 +85,21 @@ body {
 
 
 .logo-central.primero {
-  width: 250px; /* menos espacio */
+  width: 250px;
+  /* menos espacio */
   margin-right: 50px;
 }
 
 .logo-central.segundo {
-    max-height: 500px;
-  width: 600px; /* más espacio */
+  max-height: 500px;
+  width: 600px;
+  /* más espacio */
   position: static;
 }
 
 
 .texto-nosotros {
-    margin-left: 20px;
+  margin-left: 20px;
   flex: 1 1 400px;
 }
 
@@ -115,6 +120,7 @@ body {
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
+
 /* Contenedor del dropdown */
 .dropdown {
   position: relative;
@@ -131,9 +137,12 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%; /* justo debajo del dropbtn */
-  left: 50%; /* nos posicionamos desde el centro */
-  transform: translateX(-50%); /* desplazamos la mitad del ancho hacia la izquierda */
+  top: 100%;
+  /* justo debajo del dropbtn */
+  left: 50%;
+  /* nos posicionamos desde el centro */
+  transform: translateX(-50%);
+  /* desplazamos la mitad del ancho hacia la izquierda */
   height: 250px;
   padding: 20px 10px;
   background-color: #00A588;
@@ -150,7 +159,7 @@ body {
 }
 
 .dropdown-content a {
-    margin-left: 10px;
+  margin-left: 10px;
   width: 85%;
   display: block;
   color: white;
@@ -178,7 +187,9 @@ body {
 .dropdown:hover .dropbtn {
   background-color: #e6007e;
   color: white;
+  cursor: pointer;
 }
+
 .linea-blanca {
   height: 2px;
   width: 80%;
@@ -249,6 +260,7 @@ body {
   border-radius: 30px;
   resize: none;
 }
+
 .btn-enviar {
   background-color: #e6007e;
   color: white;
@@ -281,32 +293,35 @@ main {
 
 /* Panel lateral de filtro */
 .filtro-panel {
-    color: white;
-    margin-left: 10px;
-  width: 250px;
-  height: fit-content;
-  background-color:  #00A588;
+  color: white;
+  margin-left: 10px;
+  width: 399px;
+  height: 479px;
+  background-color: #00A588;
   padding: 1.5rem;
   border-radius: 12px;
-  font-size: 0.95rem;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  font-size: 12pt;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  font-family: 'encode sans', 'Regular';
 }
 
 .filtro-panel h3 {
   font-weight: bold;
   margin-bottom: 1rem;
+  font-size: 18pt;
 }
 
 .filtro-panel p {
   line-height: 1.4;
 }
-.btn-filtrar{
-      color: #00A588;
-    height: 500px;
-    background-color: rgb(224, 217, 217);
-    margin-left: 5px;
-    border-radius: 12px;
-    padding: 8px 8px;
+
+.btn-filtrar {
+  color: #00A588;
+  height: 500px;
+  background-color: rgb(224, 217, 217);
+  margin-left: 5px;
+  border-radius: 12px;
+  padding: 8px 8px;
 }
 
 /* ---------- Contenido Principal: fuentes ---------- */
@@ -316,7 +331,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding-right: 26rem;
 }
 
 .fuentes-listado ul {
@@ -324,25 +339,137 @@ main {
   padding: 0;
   margin: 0;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .fuentes-listado li {
   text-align: center;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #00A588;
-  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #00A588;
+  padding-bottom: 20px;
 }
 
 /* ---------- Enlace de cada fuente ---------- */
 .fuente-link {
   text-decoration: none;
   color: #00A588;
-  font-size: 2.4rem;
+  font-size: 60pt;
   font-weight: 400;
   transition: color 0.2s ease;
 }
 
-.fuente-link:hover {
+#fuente-funcional:hover {
   color: #e6007e;
+}
+
+/* Familias de fuentes */
+.noto-serif {
+  font-family: 'Noto Serif', serif;
+}
+
+.merriweather {
+  font-family: 'Merriweather', serif;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.lora {
+  font-family: 'Lora', serif;
+}
+
+.inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.source-serif {
+  font-family: 'Source Serif 4', serif;
+}
+
+.fira-sans {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.faustina {
+  font-family: 'Faustina', serif;
+}
+
+.rosario {
+  font-family: 'Rosario', sans-serif;
+}
+
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.work-sans {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.rubik {
+  font-family: 'Rubik', sans-serif;
+}
+
+.manrope {
+  font-family: 'Manrope', sans-serif;
+}
+
+.barlow {
+  font-family: 'Barlow', sans-serif;
+}
+
+.mulish {
+  font-family: 'Mulish', sans-serif;
+}
+
+.public-sans {
+  font-family: 'Public Sans', sans-serif;
+}
+.bungee {
+  font-family: 'Bungee', cursive;
+}
+
+.rye {
+  font-family: 'Rye', cursive;
+}
+
+.monoton {
+  font-family: 'Monoton', cursive;
+}
+
+.fleur {
+  font-family: 'Fleur De Leah', cursive;
+}
+
+.gotisch {
+  font-family: 'Grenze Gotisch', cursive;
+}
+
+.hachi {
+  font-family: 'Hachi Maru Pop', cursive;
+}
+
+.shantell {
+  font-family: 'Shantell Sans', cursive;
+}
+
+.turret {
+  font-family: 'Turret Road', cursive;
+}
+
+.pt-sans {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.ibm-plex {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.noto-serif {
+  font-family: 'Noto Serif', serif;
+}
+
+.spectral {
+  font-family: 'Spectral', serif;
 }
