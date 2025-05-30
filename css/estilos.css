@@ -36,20 +36,22 @@ body {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
 .nav-links a {
+    display: inline-block;
   text-decoration: none;
   color: #000;
-    padding: 0 0.3rem;
+  padding: 0.5rem 1rem;
   font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.nav-links a.active {
-  background: #e6007e;
+.nav-links a:hover {
+  background-color: #e6007e;
   color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 8px;
 }
 
 .carrito {
@@ -122,7 +124,6 @@ body {
   color: #000;
   text-decoration: none;
   border-radius: 8px;
-  display: inline-block;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -136,7 +137,6 @@ body {
   border-radius: 12px;
   min-width: 180px;
   z-index: 1000;
-  padding: 0.5rem 0;
   transition: opacity 0.3s ease;
 }
 
@@ -146,13 +146,15 @@ body {
 }
 
 .dropdown-content a {
+    margin-left: 10px;
+  width: 85%;
   display: block;
   padding: 0.3rem 1rem 0rem 1rem; /* sin padding abajo */
   margin-bottom: 0.5rem; /* espacio entre el texto y la línea */
   color: white;
   text-decoration: none;
-  border-bottom: 4px solid white; /* tipo subrayado separado */
-  border-radius: 20px;
+  border-bottom: 2px solid white;
+  border-radius: 0;
   font-weight: 500;
   transition: font-weight 0.1s ease;
 }
@@ -162,6 +164,7 @@ body {
 /* Hover: solo negrita */
 .dropdown-content a:hover {
   font-weight: bold;
+  background-color: #009688;
 }
 
 
@@ -174,6 +177,7 @@ body {
   background-color: #e6007e;
   color: white;
 }
+
 
 /* --------------------Contactos----------------------- */
 /* Sección contacto */
