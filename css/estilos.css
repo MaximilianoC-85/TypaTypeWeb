@@ -285,7 +285,7 @@ main {
     margin-left: 10px;
   width: 250px;
   height: fit-content;
-  background-color:  #009688;
+  background-color:  00A588;
   padding: 1.5rem;
   border-radius: 12px;
   font-size: 0.95rem;
@@ -301,7 +301,7 @@ main {
   line-height: 1.4;
 }
 .btn-filtrar{
-      color: #009688;
+      color: 00A588;
     height: 500px;
     background-color: rgb(224, 217, 217);
     margin-left: 5px;
@@ -330,7 +330,7 @@ main {
 .fuentes-listado li {
   text-align: center;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #009688;
+  border-bottom: 1px solid 00A588;
   padding-bottom: 0.3rem;
 }
 
