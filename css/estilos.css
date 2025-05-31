@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Faustina&family=Fira+Sans&family=Fleur+De+Leah&family=Grenze+Gotisch&family=Hachi+Maru+Pop&family=Inter&family=Lato&family=Manrope&family=Merriweather&family=Monoton&family=Mulish&family=Noto+Serif&family=Public+Sans&family=Roboto&family=Rosario&family=Rubik&family=Rye&family=Shantell+Sans&family=Source+Serif+4&family=Turret+Road&family=Work+Sans&family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600;800&family=Barlow&family=Faustina&family=Fira+Sans&family=Fleur+De+Leah&family=Grenze+Gotisch&family=Hachi+Maru+Pop&family=Inter&family=Lato&family=Manrope&family=Merriweather&family=Monoton&family=Mulish&family=Noto+Serif&family=Public+Sans&family=Roboto&family=Rosario&family=Rubik&family=Rye&family=Shantell+Sans&family=Source+Serif+4&family=Turret+Road&family=Work+Sans&family=Bungee&display=swap');
 
 * {
   margin: 0;
@@ -21,18 +21,20 @@ body {
   padding: 1rem 2rem;
   position: static;
   top: 0;
+    font-family: encode sans, sans-serif;
+  font-size: semibold !important;
   z-index: 10;
+  height: 87px;
+  padding-bottom: 3px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  padding-bottom: 10px;
+  height: 200px;
+  width: 200px;
+  fill: currentColor;
 }
-
-
-
 
 .nav-links {
   list-style: none;
@@ -46,8 +48,8 @@ body {
   text-decoration: none;
   font-size: x-large;
   color: #000;
-  padding: 0.5rem 1rem;
-  margin-bottom: 3px;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 1px;
   font-weight: bold;
   border-radius: 8px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -58,11 +60,27 @@ body {
   color: white;
 }
 
-
-
-.carrito {
-  font-size: 1rem;
+/* Estilo específico para el ícono */
+.carrito-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.carrito-icon {
+  margin-top: 10px;
+  width: 2em;
+  height: 30px;
+  fill: currentColor;
+  transition: fill 0.3s ease;
+}
+
+.carrito-icon path {
+  stroke: currentColor;
+  stroke-width: 2; /* o probá valores como 1.5, 3, etc. */
+  fill: currentColor; /* o podés dejar fill transparente si querés solo contorno */
+}
+
 
 .seccion-principal {
   padding: 3rem 2rem;
@@ -78,23 +96,18 @@ body {
 
 .logo-central {
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 500px;
 }
 
 
 .logo-central.primero {
-  width: 250px;
-  /* menos espacio */
-  margin-right: 50px;
+  width: 30%;
 }
 
 .logo-central.segundo {
   max-height: 500px;
-  width: 600px;
-  /* más espacio */
-  position: static;
+  width: 50%;
 }
 
 
@@ -314,8 +327,8 @@ main.fuentes {
   height: 700px;
   align-items: start;
   cursor: pointer;
+    padding: 4px 8px;
   display: none; /* oculto por defecto */
-  padding: 6px 10px;
  border-bottom: 1px solid #ccc;
  border-left:1px solid #ccc ;
  border-top: 1px solid #ccc;
@@ -325,7 +338,18 @@ main.fuentes {
   background-color: #ddd;
   position: absolute;
     margin-left: 10px;
+    padding-right: 20px;
   z-index: 40;
+}
+
+.btn-filtrar-activo img{
+  width: 65px;
+  height: 60px;
+}
+
+.btn-filtrar img{
+  width: 51px;
+  height: 53px;
 }
 
 /* Cuando filtro está abierto mostramos este botón */
