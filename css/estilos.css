@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wdth,wght@75..125,100..900&family=Funnel+Display:wght@100..900&family=Barlow:wght@100..900&family=Faustina:wght@100..900&family=Fira+Sans:wght@100..900&family=Fleur+De+Leah&family=Grenze+Gotisch:wght@100..900&family=Hachi+Maru+Pop&family=Inter:wght@100..900&family=Lato:wght@100..900&family=Manrope:wght@100..900&family=Merriweather:wght@100..900&family=Monoton&family=Mulish:wght@100..900&family=Noto+Serif:wght@100..900&family=Public+Sans:wght@100..900&family=Roboto:wght@100..900&family=Rosario:wght@100..900&family=Rubik:wght@100..900&family=Rye&family=Shantell+Sans:wght@100..900&family=Source+Serif+4:wght@100..900&family=Turret+Road:wght@100..900&family=Work+Sans:wght@100..900&family=Bungee&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
+  padding-top: 100px;
+  /* mismo alto que la navbar */
   background-color: #000000;
   color: #fff;
   font-family: 'encode sans', sans-serif;
@@ -14,17 +20,75 @@ body {
 
 .navbar {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+  background-color: white;
+  gap: 0.5rem;
+  font-family: 'Encode Sans', sans-serif;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.navbar.compact {
+  flex-direction: row;
+  justify-content: space-between; /* logo a la izquierda, botones a la derecha */
+  align-items: center; /* centra verticalmente */
+  padding: 0 20px; /* espacio interno horizontal */
+  height: 100px; /* alto fijo para compactar */
+  gap: 0; /* sin gap para que no quede tan separado */
+  width: 100vw;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Encode Sans', sans-serif;
+  font-weight: 600;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-superior {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
-  padding: 1rem 2rem;
-  position: static;
-  top: 0;
-    font-family: 'encode sans', sans-serif;
-  font-weight: semibold;
-  z-index: 10;
-  height: 87px;
-  padding-bottom: 3px;
+  max-height: 60px;
+  padding: 0 20px;
+}
+
+.fonts-links {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #000;
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.info-principal {
+  padding-left: 30px;
+  margin-right: auto;
+  /* empuja a los demás elementos al final */
+  font-family: 'merriweather', sans-serif;
+
+}
+
+.titulo-fuente {
+  font-family: 'merriweather', sans-serif;
+  font-size: 1.2rem;
+}
+
+.autor {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.fonts-links li:not(.info-principal) {
+  margin-left: 20px;
+  /* espacio entre los enlaces */
 }
 
 .logo {
@@ -76,8 +140,10 @@ body {
 
 .carrito-icon path {
   stroke: currentColor;
-  stroke-width: 2; /* o probá valores como 1.5, 3, etc. */
-  fill: currentColor; /* o podés dejar fill transparente si querés solo contorno */
+  stroke-width: 2;
+  /* o probá valores como 1.5, 3, etc. */
+  fill: currentColor;
+  /* o podés dejar fill transparente si querés solo contorno */
 }
 
 
@@ -108,7 +174,7 @@ body {
   width: 50%;
 }
 
-.logo-central.tercero{
+.logo-central.tercero {
   margin-top: 70px;
 }
 
@@ -171,6 +237,9 @@ body {
 .dropdown-content li {
   list-style: none;
 }
+.dropdown-content .linea-blanca:not(:last-child) {
+  margin-bottom: 10px;
+}
 
 .dropdown-content a {
   margin-left: 10px;
@@ -206,7 +275,7 @@ body {
 
 .linea-blanca {
   height: 2px;
-  width: 80%;
+  width: 88%;
   background-color: white;
   margin: 0 auto;
 }
@@ -228,7 +297,7 @@ body {
 }
 
 .fucsia {
-    font-family: 'Funnel Display', sans-serif;
+  font-family: 'Funnel Display', sans-serif;
   color: #e6007e;
   font-weight: bold;
 }
@@ -296,17 +365,20 @@ body {
 /* --------------------Fuentes----------------------- */
 /* Contenedor principal para posicionar */
 main.fuentes {
-  position: relative; /* para posicionar hijos relativos a este */
+  position: relative;
+  /* para posicionar hijos relativos a este */
   display: flex;
-  align-items: flex-start; /* para que quede alineado arriba */
-  gap: 1rem; /* espacio entre btn y panel */
+  align-items: flex-start;
+  /* para que quede alineado arriba */
+  gap: 1rem;
+  /* espacio entre btn y panel */
   background-color: #fff;
 }
 
 /* Botón filtro cerrado (visible solo cuando filtro está cerrado) */
 .btn-filtrar {
   cursor: pointer;
-    height: 100vh;
+  height: 100vh;
   background-color: #ddd;
   display: inline-flex;
   align-items: start;
@@ -326,30 +398,31 @@ main.fuentes {
 
 /* Botón filtro activo (visible solo cuando filtro está abierto) */
 .btn-filtrar-activo {
-    height: 100vh;
+  height: 100vh;
   align-items: start;
   cursor: pointer;
-    padding: 4px 8px;
-  display: none; /* oculto por defecto */
- border-bottom: 1px solid #ccc;
- border-left:1px solid #ccc ;
- border-top: 1px solid #ccc;
-  border-radius:  6px;
+  padding: 4px 8px;
+  display: none;
+  /* oculto por defecto */
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-radius: 6px;
   border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
+  border-top-right-radius: 0;
   background-color: #ddd;
   position: absolute;
-    margin-left: 10px;
-    padding-right: 20px;
+  margin-left: 10px;
+  padding-right: 20px;
   z-index: 40;
 }
 
-.btn-filtrar-activo img{
+.btn-filtrar-activo img {
   width: 65px;
   height: 60px;
 }
 
-.btn-filtrar img{
+.btn-filtrar img {
   width: 51px;
   height: 53px;
 }
@@ -363,13 +436,14 @@ main.fuentes {
 .filtro-panel {
   position: absolute;
   color: #000;
-  left: 100px; /* a la izquierda o donde quieras */
+  left: 100px;
+  /* a la izquierda o donde quieras */
   width: 280px;
-    height: 100vh;
+  height: 100vh;
   background-color: #ddd;
   border: 1px solid #ccc;
   border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -381,14 +455,16 @@ main.fuentes {
 .filtro-panel.oculto {
   display: none;
 }
-.filtro-bloque{
+
+.filtro-bloque {
   padding-bottom: 15px;
 }
 
 /* Contenido principal opaco cuando filtro está activo */
 .panel.opaco {
   opacity: 0.4;
-  pointer-events: none; /* opcional, para que no se pueda interactuar */
+  pointer-events: none;
+  /* opcional, para que no se pueda interactuar */
   transition: opacity 0.5s ease;
 }
 
@@ -519,6 +595,7 @@ main.fuentes {
 .public-sans {
   font-family: 'Public Sans', sans-serif;
 }
+
 .bungee {
   font-family: 'Bungee', cursive;
 }
@@ -563,7 +640,8 @@ main.fuentes {
 .spectral {
   font-family: 'Spectral', serif;
 }
- /*---------------------Merriweather-----------------------------*/
+
+/*---------------------Merriweather-----------------------------*/
 
 /* Tipografía base y estilos globales */
 .main-merriweather {
@@ -572,7 +650,7 @@ main.fuentes {
   padding: 0;
   background-color: #f9f9f9;
   padding: 2rem;
-  color:#000;
+  color: #000;
 }
 
 .titulo-fuente {
@@ -652,7 +730,7 @@ main.fuentes {
   border: 1px solid #ccc;
   padding: 8px;
   z-index: 20;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   border-radius: 6px;
   white-space: nowrap;
 }
@@ -678,8 +756,13 @@ main.fuentes {
   display: none;
 }
 
+.selector-texto {
+  cursor: text;
+}
+
 .texto[data-state="corto"] {
-  max-height: 3em; /* opcional */
+  max-height: 3em;
+  /* opcional */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -754,9 +837,72 @@ main.fuentes {
   border-radius: 6px;
   cursor: pointer;
 }
+
 .eliminar-item {
   color: red;
   font-weight: bold;
   cursor: pointer;
   margin-left: 10px;
+}
+.merriweather section{
+    min-height: 100vh; /* o al menos suficiente para hacer scroll */
+    margin-top: 50px;
+
+}
+.fonts-links a {
+  font-family: 'encode sans', sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 1px;
+  font-weight: lighter;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.fonts-links a:hover,
+.fonts-links a.active {
+ background-color: #e6007e;
+  color: white;
+}
+
+/* Posicionar relativo al botón Párrafo */
+.btn1 {
+  position: relative;
+}
+
+/* El panel se posiciona respecto al botón */
+.panel-alineacion {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 4px;
+  display: flex;
+  gap: 4px;
+  z-index: 10;
+  border-radius: 4px;
+}
+
+/* Oculto por defecto */
+.panel-alineacion.oculto {
+  display: none;
+}
+
+.panel-alineacion button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-alineacion button:hover {
+  background-color: #eee;
+  border-radius: 4px;
 }

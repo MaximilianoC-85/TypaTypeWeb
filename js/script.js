@@ -40,7 +40,19 @@ document.addEventListener('click', function (event) {
   }
 });
 
-document.querySelectorAll('.selector-texto').forEach(texto => {
+document.querySelectorAll('.muestra').forEach(muestra => {
+  const texto = muestra.querySelector('.selector-texto');
+  const slider = muestra.querySelector('.slider-tamano');
+  const input = muestra.querySelector('.input-tamano');
+  const panelTexto = muestra.querySelector('.color-panel-texto');
+  const panelFondo = muestra.querySelector('.color-panel-fondo');
+  const btnTexto = muestra.querySelector('.btn-color-texto');
+  const btnFondo = muestra.querySelector('.btn-color-fondo');
+  const cuerpoLink = muestra.querySelector('.toggle-cuerpo');
+  const panelCuerpo = muestra.querySelector('.panel-cuerpo');
+  const btnparrafo = muestra.querySelector('.btn1');
+
+  document.querySelectorAll('.selector-texto').forEach(texto => {
   texto.addEventListener('click', function () {
     this.setAttribute('contenteditable', 'true');
     this.focus();
@@ -68,32 +80,27 @@ document.querySelectorAll('.selector-texto').forEach(texto => {
 document.querySelectorAll('.btn1').forEach(btn => {
   btn.addEventListener('click', function () {
     const texto = this.closest('.muestra').querySelector('.selector-texto');
-    
+    const panelAlineacion = this.closest('.muestra').querySelector('.panel-alineacion');
+
     const textoLargo = `La tipografía no es solo una cuestión estética: es una herramienta fundamental para comunicar con claridad, intención y personalidad. Cada elección tipográfica transmite un tono distinto, ya sea a través del grosor del trazo, la altura de las x, el contraste entre astas o la forma de sus remates. Una buena tipografía puede reforzar el mensaje, guiar la lectura y generar una experiencia visual armónica. Entre serif y sans serif, romanas, geométricas, humanistas o grotescas, hay un mundo de decisiones posibles, cada una con sus matices. El interletrado, la interlínea y el ancho del párrafo también influyen en la legibilidad, tanto en papel como en pantalla. Por eso, conocer las propiedades de una tipografía permite usarla de forma consciente, alineada al contexto y al contenido. En definitiva, elegir una tipografía no es decorar: es diseñar el tono con el que las palabras se presentan al mundo`;
     const textoCorto = 'Sempiterno crepúsculo donde todo termina, pero nada desaparece';
 
     if (texto.dataset.state === 'largo') {
+      panelAlineacion.classList.add('oculto');
       texto.textContent = textoCorto.slice(0, 300);
       texto.dataset.state = 'corto';
+        texto.style.textAlign = 'left'; // ⬅️ Alineación reseteada
+          texto.style.padding = '0'; // O el valor que prefieras
     } else {
+      panelAlineacion.classList.remove('oculto');
       texto.textContent = textoLargo.slice(0, 1500);
       texto.dataset.state = 'largo';
+  texto.style.padding = '2rem'; // O el valor que prefieras
+        // Ocultar otros paneles y mostrar el de alineación
+      ocultarOtrosPaneles(panelAlineacion);
     }
   });
 });
-
-
-
-document.querySelectorAll('.muestra').forEach(muestra => {
-  const texto = muestra.querySelector('.selector-texto');
-  const slider = muestra.querySelector('.slider-tamano');
-  const input = muestra.querySelector('.input-tamano');
-  const panelTexto = muestra.querySelector('.color-panel-texto');
-  const panelFondo = muestra.querySelector('.color-panel-fondo');
-  const btnTexto = muestra.querySelector('.btn-color-texto');
-  const btnFondo = muestra.querySelector('.btn-color-fondo');
-  const cuerpoLink = muestra.querySelector('.toggle-cuerpo');
-  const panelCuerpo = muestra.querySelector('.panel-cuerpo');
 
   // Función para actualizar tamaño
   function actualizarTamanio(valor) {
@@ -108,13 +115,18 @@ document.querySelectorAll('.muestra').forEach(muestra => {
   slider.addEventListener('input', e => actualizarTamanio(e.target.value));
   input.addEventListener('input', e => actualizarTamanio(e.target.value));
 
-  // Mostrar/ocultar paneles de ajustes
-  function ocultarOtrosPaneles(panelActivo) {
-    [panelTexto, panelFondo, panelCuerpo].forEach(panel => {
+function ocultarOtrosPaneles(panelActivo) {
+  document.querySelectorAll('.color-panel-texto, .color-panel-fondo, .panel-cuerpo, .panel-alineacion')
+    .forEach(panel => {
       if (panel !== panelActivo) panel.classList.add('oculto');
     });
-    panelActivo.classList.toggle('oculto');
+  
+  // ⚠️ Verificamos si el panel ya está visible antes de alternar
+  if (panelActivo.classList.contains('oculto')) {
+    panelActivo.classList.remove('oculto');
   }
+}
+
 
   btnTexto.addEventListener('click', e => {
     e.preventDefault();
@@ -131,6 +143,7 @@ document.querySelectorAll('.muestra').forEach(muestra => {
     ocultarOtrosPaneles(panelCuerpo);
   });
 
+
   // Aplicar color de texto (sin cerrar el panel)
   panelTexto.querySelectorAll('.color-option').forEach(op => {
     op.addEventListener('click', () => {
@@ -145,6 +158,50 @@ document.querySelectorAll('.muestra').forEach(muestra => {
     });
   });
 });
+
+
+document.querySelectorAll('.panel-alineacion .alinear').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const muestra = this.closest('.muestra');
+    const texto = muestra.querySelector('.selector-texto');
+    const align = this.dataset.align;
+    texto.style.textAlign = align;
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".fonts-links a");
+
+  // Activa link en clic
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      navLinks.forEach((l) => l.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+
+  // Activa link en scroll
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 160; // Compensá navbar
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${sectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  });
+});
+
 
 const modalCarrito = document.getElementById('modal-carrito');
 const btnAbrirCarrito = document.getElementById('boton-carrito');
