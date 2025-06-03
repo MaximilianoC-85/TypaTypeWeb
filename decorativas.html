@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
 <body>
   <header class="navbar">
     <a href="index.html" class="logo">
-      <img src="img/Logo.webp" alt="Logo" class="logo-img" />
+      <img src="img/logo.svg" alt="Logo" class="logo" />
     </a>
     <nav>
       <ul class="nav-links">
@@ -29,39 +30,125 @@
         </li>
         <li><a href="about.html">Nosotros</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="#"><img src="img/Carrito.jpg" alt="carrito" class="carrito" /></a></li>
+        <li>
+          <a href="#" class="carrito-link">
+            <svg class="carrito-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.45 54.3">
+              <path
+                d="M25.1,49.7c0,2.26-1.84,4.1-4.1,4.1s-4.1-1.84-4.1-4.1,1.84-4.1,4.1-4.1,4.1,1.84,4.1,4.1ZM47.65,45.6c-2.26,0-4.1,1.84-4.1,4.1s1.84,4.1,4.1,4.1,4.1-1.84,4.1-4.1-1.84-4.1-4.1-4.1ZM59.87,13.35l-6.57,23.65c-.74,2.65-3.16,4.49-5.91,4.5h-25.33c-2.76,0-5.19-1.84-5.93-4.5L7.14,4.6H2.55c-1.13,0-2.05-.92-2.05-2.05S1.42.5,2.55.5h6.15c.92,0,1.73.61,1.98,1.5l2.43,8.75h44.79c1.13,0,2.05.92,2.05,2.05,0,.19-.03.37-.07.55ZM55.2,14.85H14.24l5.84,21.05c.25.89,1.05,1.5,1.98,1.5h25.33c.92,0,1.73-.61,1.98-1.5l5.83-21.05Z" />
+            </svg>
+          </a>
+
+        </li>
       </ul>
     </nav>
   </header>
-
   <main class="fuentes">
-    <a class="btn-filtrar">
-      <img src="img/Filtrar.webp" alt="Filtrar"/>
+    <!-- Botón para abrir panel -->
+    <a class="btn-filtrar activo">
+      <img src="img/Filtrar.webp" alt="Filtrar" />
     </a>
-    <aside class="filtro-panel">
+    <a class="btn-filtrar-activo">
+      <img src="img/FiltrarActivo.webp" alt="Filtrar" />
+    </a>
+    <!-- Panel de filtros oculto al inicio -->
+    <aside class="filtro-panel oculto">
+
+      <div class="filtro-header">
+        <div class="titulo-seccion">
+          <img src="img/Atributos.webp" alt="Aa">
+          <div class="titulo">Atributos</div>
+        </div>
+      </div>
+
+      <!-- Clasificación -->
+      <section class="filtro-bloque">
+        <h4>Clasificación</h4>
+        <div class="btn-group">
+          <button>Serif</button>
+          <button>Sans Serif</button>
+          <button>Script</button>
+          <button>Monospace</button>
+          <button>Slab Serif</button>
+        </div>
+      </section>
+
+      <!-- Cantidad de estilos -->
+      <section class="filtro-bloque">
+        <h4>Cantidad de Estilos</h4>
+        <div class="range-control">
+          <input type="range" min="1" max="18" value="1">
+          <div class="range-labels">
+            <span>1</span><span>+18</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contraste -->
+      <section class="filtro-bloque">
+        <h4>Contraste del Trazo</h4>
+        <div class="btn-group">
+          <button>Alto</button>
+          <button>Medio</button>
+          <button>Bajo</button>
+        </div>
+      </section>
+
+      <!-- Expresividad -->
+      <section class="filtro-bloque">
+        <h4>Expresividad</h4>
+        <div class="btn-group">
+          <button>Formal</button>
+          <button>Informal</button>
+          <button>Retro</button>
+          <button>Divertida</button>
+          <button>Artística</button>
+        </div>
+      </section>
+
+      <!-- Escritura -->
+      <section class="filtro-bloque">
+        <div class="titulo-seccion">
+          <img src="img/Escritura.webp" alt="Worldwide">
+          <div class="titulo">Escritura</div>
+        </div>
+        <h4>Sistemas de Escritura</h4>
+        <div class="btn-group">
+          <button>Latino</button>
+          <button>Cirílico</button>
+          <button>Griego</button>
+          <button>Árabe</button>
+          <button>Hebreo</button>
+          <button>Chino</button>
+          <button>Japonés</button>
+          <button>Coreano</button>
+        </div>
+      </section>
+    </aside>
+
+    <aside class="panel">
       <h3>Fuentes Decorativas</h3>
       <p>
-        Cuando se diseña contenido para entornos digitales, la tipografía adquiere un rol fundamental: debe ser clara,
-        funcional y adaptarse a diversas pantallas.
+        Cambiarlo por un img
       </p>
-      <p>
-        Estas tipografías suelen tener formas abiertas, contrastes moderados y espaciado generoso, cualidades que
-        mejoran la legibilidad en dispositivos como computadoras, tablets o celulares.
+      <br>
+        <p>
+        Cambiarlo por un img
       </p>
       </div>
     </aside>
-     <section class="fuentes-listado">
-    <ul>
-      <li><a href="#" class="fuente-link bungee">Bungee</a></li>
-      <li><a href="#" class="fuente-link rye">Rye</a></li>
-      <li><a href="#" class="fuente-link monoton">Monoton</a></li>
-      <li><a href="#" class="fuente-link fleur">Fleur De Leah</a></li>
-      <li><a href="#" class="fuente-link gotisch">Grenze Gotisch</a></li>
-      <li><a href="#" class="fuente-link hachi">Hachi Maru Pop</a></li>
-      <li><a href="#" class="fuente-link shantell">Shantell Sans</a></li>
-      <li><a href="#" class="fuente-link turret">Turret Road</a></li>
-    </ul>
-  </section>
+    <section class="fuentes-listado">
+      <ul>
+        <li><a href="#" class="fuente-link bungee">Bungee</a></li>
+        <li><a href="#" class="fuente-link rye">Rye</a></li>
+        <li><a href="#" class="fuente-link monoton">Monoton</a></li>
+        <li><a href="#" class="fuente-link fleur">Fleur De Leah</a></li>
+        <li><a href="#" class="fuente-link gotisch">Grenze Gotisch</a></li>
+        <li><a href="#" class="fuente-link hachi">Hachi Maru Pop</a></li>
+        <li><a href="#" class="fuente-link shantell">Shantell Sans</a></li>
+        <li><a href="#" class="fuente-link turret">Turret Road</a></li>
+      </ul>
+    </section>
   </main>
 </body>
+
 </html>
