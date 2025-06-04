@@ -39,7 +39,9 @@ document.addEventListener('click', function (event) {
     }
   }
 });
-
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+// Variables de botones y paneles (Muestra)
 document.querySelectorAll('.muestra').forEach(muestra => {
   const texto = muestra.querySelector('.selector-texto');
   const slider = muestra.querySelector('.slider-tamano');
@@ -51,8 +53,9 @@ document.querySelectorAll('.muestra').forEach(muestra => {
   const cuerpoLink = muestra.querySelector('.toggle-cuerpo');
   const panelCuerpo = muestra.querySelector('.panel-cuerpo');
   const btnparrafo = muestra.querySelector('.btn1');
+  const panelAlineacion = muestra.querySelector('.panel-alineacion');
 
-  document.querySelectorAll('.selector-texto').forEach(texto => {
+  // Editar texto
   texto.addEventListener('click', function () {
     this.setAttribute('contenteditable', 'true');
     this.focus();
@@ -62,7 +65,6 @@ document.querySelectorAll('.muestra').forEach(muestra => {
     const maxChars = this.dataset.state === 'largo' ? 1500 : 300;
     if (this.textContent.length > maxChars) {
       this.textContent = this.textContent.slice(0, maxChars);
-      // Mover cursor al final
       const range = document.createRange();
       const sel = window.getSelection();
       range.selectNodeContents(this);
@@ -75,32 +77,28 @@ document.querySelectorAll('.muestra').forEach(muestra => {
   texto.addEventListener('blur', function () {
     this.removeAttribute('contenteditable');
   });
-});
 
-document.querySelectorAll('.btn1').forEach(btn => {
-  btn.addEventListener('click', function () {
-    const texto = this.closest('.muestra').querySelector('.selector-texto');
-    const panelAlineacion = this.closest('.muestra').querySelector('.panel-alineacion');
+  // Cambiar entre texto corto/largo
+  if (btnparrafo) {
+    btnparrafo.addEventListener('click', function () {
+      const textoLargo = `La tipografía no es solo una cuestión estética: es una herramienta fundamental para comunicar con claridad, intención y personalidad. Cada elección tipográfica transmite un tono distinto, ya sea a través del grosor del trazo, la altura de las x, el contraste entre astas o la forma de sus remates. Una buena tipografía puede reforzar el mensaje, guiar la lectura y generar una experiencia visual armónica. Entre serif y sans serif, romanas, geométricas, humanistas o grotescas, hay un mundo de decisiones posibles, cada una con sus matices. El interletrado, la interlínea y el ancho del párrafo también influyen en la legibilidad, tanto en papel como en pantalla. Por eso, conocer las propiedades de una tipografía permite usarla de forma consciente, alineada al contexto y al contenido. En definitiva, elegir una tipografía no es decorar: es diseñar el tono con el que las palabras se presentan al mundo`;
+      const textoCorto = 'Sempiterno crepúsculo donde todo termina, pero nada desaparece';
 
-    const textoLargo = `La tipografía no es solo una cuestión estética: es una herramienta fundamental para comunicar con claridad, intención y personalidad. Cada elección tipográfica transmite un tono distinto, ya sea a través del grosor del trazo, la altura de las x, el contraste entre astas o la forma de sus remates. Una buena tipografía puede reforzar el mensaje, guiar la lectura y generar una experiencia visual armónica. Entre serif y sans serif, romanas, geométricas, humanistas o grotescas, hay un mundo de decisiones posibles, cada una con sus matices. El interletrado, la interlínea y el ancho del párrafo también influyen en la legibilidad, tanto en papel como en pantalla. Por eso, conocer las propiedades de una tipografía permite usarla de forma consciente, alineada al contexto y al contenido. En definitiva, elegir una tipografía no es decorar: es diseñar el tono con el que las palabras se presentan al mundo`;
-    const textoCorto = 'Sempiterno crepúsculo donde todo termina, pero nada desaparece';
-
-    if (texto.dataset.state === 'largo') {
-      panelAlineacion.classList.add('oculto');
-      texto.textContent = textoCorto.slice(0, 300);
-      texto.dataset.state = 'corto';
-        texto.style.textAlign = 'left'; // ⬅️ Alineación reseteada
-          texto.style.padding = '0'; // O el valor que prefieras
-    } else {
-      panelAlineacion.classList.remove('oculto');
-      texto.textContent = textoLargo.slice(0, 1500);
-      texto.dataset.state = 'largo';
-  texto.style.padding = '2rem'; // O el valor que prefieras
-        // Ocultar otros paneles y mostrar el de alineación
-      ocultarOtrosPaneles(panelAlineacion);
-    }
-  });
-});
+      if (texto.dataset.state === 'largo') {
+        panelAlineacion?.classList.add('oculto');
+        texto.textContent = textoCorto.slice(0, 300);
+        texto.dataset.state = 'corto';
+        texto.style.textAlign = 'left';
+        texto.style.padding = '0';
+      } else {
+        panelAlineacion?.classList.remove('oculto');
+        texto.textContent = textoLargo.slice(0, 1500);
+        texto.dataset.state = 'largo';
+        texto.style.padding = '2rem';
+        ocultarOtrosPaneles(panelAlineacion, true);
+      }
+    });
+  }
 
   // Función para actualizar tamaño
   function actualizarTamanio(valor) {
@@ -108,58 +106,76 @@ document.querySelectorAll('.btn1').forEach(btn => {
     if (isNaN(v)) return;
     v = Math.max(6, Math.min(72, v));
     texto.style.fontSize = v + 'pt';
-    slider.value = v;
-    input.value = v;
+    if (slider) slider.value = v;
+    if (input) input.value = v;
   }
 
-  slider.addEventListener('input', e => actualizarTamanio(e.target.value));
-  input.addEventListener('input', e => actualizarTamanio(e.target.value));
+  if (slider) slider.addEventListener('input', e => actualizarTamanio(e.target.value));
+  if (input) input.addEventListener('input', e => actualizarTamanio(e.target.value));
 
-function ocultarOtrosPaneles(panelActivo) {
-  document.querySelectorAll('.color-panel-texto, .color-panel-fondo, .panel-cuerpo, .panel-alineacion')
-    .forEach(panel => {
-      if (panel !== panelActivo) panel.classList.add('oculto');
-    });
-  
-  // ⚠️ Verificamos si el panel ya está visible antes de alternar
-  if (panelActivo.classList.contains('oculto')) {
-    panelActivo.classList.remove('oculto');
+  // Mostrar/ocultar paneles
+  function ocultarOtrosPaneles(panelActivo, forzarMostrar = false) {
+    const yaVisible = !panelActivo.classList.contains('oculto');
+    document.querySelectorAll('.color-panel-texto, .color-panel-fondo, .panel-cuerpo, .panel-alineacion')
+      .forEach(panel => {
+        if (panel !== panelActivo) panel.classList.add('oculto');
+      });
+
+    if (forzarMostrar || !yaVisible) {
+      panelActivo.classList.remove('oculto');
+    } else {
+      panelActivo.classList.add('oculto');
+    }
   }
-}
 
+  if (btnTexto) {
+    btnTexto.addEventListener('click', e => {
+      e.preventDefault();
+      ocultarOtrosPaneles(panelTexto);
+    });
+  }
 
-  btnTexto.addEventListener('click', e => {
-    e.preventDefault();
-    ocultarOtrosPaneles(panelTexto);
-  });
+  if (btnFondo) {
+    btnFondo.addEventListener('click', e => {
+      e.preventDefault();
+      ocultarOtrosPaneles(panelFondo);
+    });
+  }
 
-  btnFondo.addEventListener('click', e => {
-    e.preventDefault();
-    ocultarOtrosPaneles(panelFondo);
-  });
+  if (cuerpoLink) {
+    cuerpoLink.addEventListener('click', e => {
+      e.preventDefault();
+      ocultarOtrosPaneles(panelCuerpo);
+    });
+  }
 
-  cuerpoLink.addEventListener('click', e => {
-    e.preventDefault();
-    ocultarOtrosPaneles(panelCuerpo);
-  });
-
-
-  // Aplicar color de texto (sin cerrar el panel)
-  panelTexto.querySelectorAll('.color-option').forEach(op => {
+  // Aplicar color de texto
+  panelTexto?.querySelectorAll('.color__btn').forEach(op => {
     op.addEventListener('click', () => {
-      texto.style.color = op.style.background;
+      texto.style.color = op.style.backgroundColor;
     });
   });
 
-  // Aplicar color de fondo (sin cerrar el panel)
-  panelFondo.querySelectorAll('.color-option').forEach(op => {
+  // Aplicar color de fondo
+  panelFondo?.querySelectorAll('.color__btn').forEach(op => {
     op.addEventListener('click', () => {
-      texto.style.backgroundColor = op.style.background;
+      texto.style.backgroundColor = op.style.backgroundColor;
     });
   });
+
+  // Peso y estilo inicial
+  const weight = muestra.dataset.weight;
+  const style = muestra.dataset.style;
+  const label = muestra.querySelector('.peso-texto');
+  texto.style.fontWeight = weight;
+  texto.style.fontStyle = style;
+  if (label) {
+    label.style.fontWeight = weight;
+    label.style.fontStyle = style;
+  }
 });
 
-
+// Alineación
 document.querySelectorAll('.panel-alineacion .alinear').forEach(btn => {
   btn.addEventListener('click', function () {
     const muestra = this.closest('.muestra');
@@ -168,7 +184,8 @@ document.querySelectorAll('.panel-alineacion .alinear').forEach(btn => {
     texto.style.textAlign = align;
   });
 });
-
+/*--------------------------------------------------------------------------------------*/
+// Variables de navegación 
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".fonts-links a");
@@ -186,11 +203,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollY = window.scrollY;
 
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 160; // Compensá navbar
       const sectionHeight = section.offsetHeight;
       const sectionId = section.getAttribute("id");
 
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      if (scrollY >= sectionTop && scrollY < sectionHeight) {
         navLinks.forEach((link) => {
           link.classList.remove("active");
           if (link.getAttribute("href") === `#${sectionId}`) {
@@ -265,3 +281,4 @@ btnAbrirCarrito.addEventListener('click', () => {
 btnCerrarCarrito.addEventListener('click', () => {
   modalCarrito.classList.add('oculto');
 });
+

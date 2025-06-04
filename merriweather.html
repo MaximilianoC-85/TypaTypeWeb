@@ -47,104 +47,78 @@
 
         <ul class="fonts-links">
             <li class="info-principal">
-                <h1 class="titulo-fuente">Merriweather</h1>
-                <div class="autor">De Eben Sorkin</div>
+                <a href="#catalogo" class="logo-merriweather-container">
+                    <img src="img/merriweather.webp" alt="Merriweather" class="logo logo-negro">
+                    <img src="img/merriweatherActivo.webp" alt="Merriweather" class="logo logo-blanco">
+                </a>
             </li>
-            <li><a href="#catalogo">CATÁLOGO</a></li>
+            <li><a href="ftextos.html">CATÁLOGO</a></li>
             <li><a href="#info">INFO</a></li>
             <li><a href="#glifos">GLIFOS</a></li>
             <li><a href="#obtener">OBTENER</a></li>
         </ul>
     </header>
 
-    <main class="main-merriweather">
+    <main class="main-merriweather" style="padding-top: 150px;">
         <section id="catalogo">
 
             <!-- Light -->
-            <div class="muestra">
-                <div class="peso">Light</div>
-                <div class="selector-texto merriweather" contenteditable="true" style="font-weight: 300;">
+            <div class="muestra" data-weight="300">
+                <div class="color__section">
+                    <div class="peso-texto">Light</div>
+                    <span class="flecha">»</span>
+                    <div class="color__text">
+                        <a href="" data-menu="menu1">PÁRRAFO</a>
+                        <a href="" data-menu="menu2">CUERPO</a>
+                    </div>
+                    <div class="color__group">
+                        <div class="color__label" data-menu="menu3">COLOR DE TEXTO</div>
+                        <div class="color__options oculto">
+                            <button class="color__btn" style="background-color: #000000;"></button>
+                            <button class="color__btn" style="background-color: #FF0000;"></button>
+                            <button class="color__btn" style="background-color: #FFA500;"></button>
+                            <button class="color__btn" style="background-color: #FFFF00;"></button>
+                            <button class="color__btn" style="background-color: #008000;"></button>
+                            <button class="color__btn" style="background-color: #00FFFF;"></button>
+                            <button class="color__btn" style="background-color: #0000FF;"></button>
+                            <button class="color__btn" style="background-color: #800080;"></button>
+                            <button class="color__btn" style="background-color: #808080;"></button>
+                            <button class="color__btn" style="background-color: #A52A2A;"></button>
+                            <button class="color__btn" style="background-color: #D2691E;"></button>
+                            <button class="color__btn" style="background-color: #FFC0CB;"></button>
+                        </div>
+                    </div>
+
+                    <div class="color__group">
+                        <div class="color__label" data-menu="menu4">COLOR DE FONDO</div>
+                        <div class="color__options oculto">
+                            <button class="color__btn" style="background-color: #FFFFFF;"></button>
+                            <button class="color__btn" style="background-color: #F5F5F5;"></button>
+                            <button class="color__btn" style="background-color: #DCDCDC;"></button>
+                            <button class="color__btn" style="background-color: #C0C0C0;"></button>
+                            <button class="color__btn" style="background-color: #A9A9A9;"></button>
+                            <button class="color__btn" style="background-color: #808080;"></button>
+                            <button class="color__btn" style="background-color: #696969;"></button>
+                            <button class="color__btn" style="background-color: #000000;"></button>
+                            <button class="color__btn" style="background-color: #FFDAB9;"></button>
+                            <button class="color__btn" style="background-color: #FFE4E1;"></button>
+                            <button class="color__btn" style="background-color: #FAFAD2;"></button>
+                            <button class="color__btn" style="background-color: #E6E6FA;"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="selector-texto merriweather" contenteditable="true" data-state="corto">
                     Sempiterno crepúsculo donde todo termina, pero nada desaparece
                 </div>
 
-                <div class="botones">
-                    <a class="boton-ajuste btn1">Párrafo</a>
-                    <div class="panel-alineacion oculto">
-                        <button class="alinear" data-align="left" title="Alinear a la izquierda">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path d="M3 3h18v2H3V3zm0 4h12v2H3V7zm0 4h18v2H3v-2zm0 4h12v2H3v-2zm0 4h18v2H3v-2z" />
-                            </svg>
-                        </button>
-                        <button class="alinear" data-align="center" title="Centrar texto">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path d="M3 3h18v2H3V3zm3 4h12v2H6V7zm-3 4h18v2H3v-2zm3 4h12v2H6v-2zm-3 4h18v2H3v-2z" />
-                            </svg>
-                        </button>
-                        <button class="alinear" data-align="right" title="Alinear a la derecha">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path d="M3 3h18v2H3V3zm6 4h12v2H9V7zM3 11h18v2H3v-2zm6 4h12v2H9v-2zM3 19h18v2H3v-2z" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    <a href="#" class="ajuste-opcion toggle-cuerpo">Cuerpo</a>
-                    <div class="panel-cuerpo oculto">
-                        <label for="slider-tamano">Tamaño (pt):</label>
-                        <input type="range" min="6" max="72" value="16" step="1" class="slider-tamano">
-                        <input type="number" min="6" max="72" value="16" step="1" class="input-tamano">
-                    </div>
-
-
-                    <!-- Panel de color de texto -->
-                    <div class="color-wrapper">
-                        <a href="#" class="ajuste btn-color-texto">Color de texto</a>
-                        <div class="color-panel-texto oculto">
-                            <div class="color-grid">
-                                <div class="color-option" style="background: #000;"></div>
-                                <div class="color-option" style="background: #555;"></div>
-                                <div class="color-option" style="background: #999;"></div>
-                                <div class="color-option" style="background: #ccc;"></div>
-                                <div class="color-option" style="background: #eee;"></div>
-                                <div class="color-option" style="background: #fff;"></div>
-                                <div class="color-option" style="background: red;"></div>
-                                <div class="color-option" style="background: orange;"></div>
-                                <div class="color-option" style="background: yellow;"></div>
-                                <div class="color-option" style="background: green;"></div>
-                                <div class="color-option" style="background: blue;"></div>
-                                <div class="color-option" style="background: purple;"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Panel de color de fondo -->
-                    <div class="color-wrapper">
-                        <a href="#" class="ajuste btn-color-fondo">Color de fondo</a>
-                        <div class="color-panel-fondo oculto">
-                            <div class="color-grid">
-                                <div class="color-option" style="background: #000;"></div>
-                                <div class="color-option" style="background: #555;"></div>
-                                <div class="color-option" style="background: #999;"></div>
-                                <div class="color-option" style="background: #ccc;"></div>
-                                <div class="color-option" style="background: #eee;"></div>
-                                <div class="color-option" style="background: #fff;"></div>
-                                <div class="color-option" style="background: red;"></div>
-                                <div class="color-option" style="background: orange;"></div>
-                                <div class="color-option" style="background: yellow;"></div>
-                                <div class="color-option" style="background: green;"></div>
-                                <div class="color-option" style="background: blue;"></div>
-                                <div class="color-option" style="background: purple;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
 
             <!-- Italic -->
-            <div class="muestra">
-                <div class="peso">Italic</div>
-                <div class="selector-texto merriweather" contenteditable="true"
-                    style="font-weight: 300; font-style: italic;">
+            <div class="muestra" data-weight="300" data-style="italic">
+                <div class="peso-texto">Light Italic</div>
+                <div class="selector-texto merriweather" contenteditable="true">
                     Sempiterno crepúsculo donde todo termina, pero nada desaparece
                 </div>
 
@@ -221,9 +195,9 @@
             </div>
 
             <!-- Regular -->
-            <div class="muestra">
-                <div class="peso">Regular</div>
-                <div class="selector-texto merriweather" contenteditable="true" style="font-weight: 400;">
+            <div class="muestra" data-weight="400">
+                <div class="peso-texto">Regular</div>
+                <div class="selector-texto merriweather" contenteditable="true">
                     Sempiterno crepúsculo donde todo termina, pero nada desaparece
                 </div>
 
@@ -300,9 +274,9 @@
             </div>
 
             <!-- Medium -->
-            <div class="muestra">
-                <div class="peso">Medium</div>
-                <div class="selector-texto merriweather" contenteditable="true" style="font-weight: 500;">
+            <div class="muestra" data-weight="500">
+                <div class="peso-texto">Medium</div>
+                <div class="selector-texto merriweather" contenteditable="true">
                     Sempiterno crepúsculo donde todo termina, pero nada desaparece
                 </div>
                 <div class="botones">
@@ -377,10 +351,9 @@
                 </div>
             </div>
             <!-- Medium Italic -->
-            <div class="muestra">
-                <div class="peso">Medium Italic</div>
-                <div class="selector-texto merriweather" contenteditable="true"
-                    style="font-weight: 500; font-style: italic;">
+            <div class="muestra" data-weight="500" data-style="italic">
+                <div class="peso-texto">Medium Italic</div>
+                <div class="selector-texto merriweather" contenteditable="true">
                     Sempiterno crepúsculo donde todo termina, pero nada desaparece
                 </div>
                 <div class="botones">
@@ -456,9 +429,9 @@
             </div>
 
             <!-- SemiBold -->
-            <div class="muestra">
-                <div class="peso">SemiBold</div>
-                <div class="selector-texto merriweather" contenteditable="true" style="font-weight: 600;">
+            <div class="muestra" data-weight="600">
+                <div class="peso-texto">SemiBold</div>
+                <div class="selector-texto merriweather" contenteditable="true">
                     Sempiterno crepúsculo donde todo termina, pero nada desaparece
                 </div>
                 <div class="botones">
@@ -533,10 +506,9 @@
             </div>
 
             <!-- SemiBold Italic -->
-            <div class="muestra">
-                <div class="peso">SemiBold Italic</div>
-                <div class="selector-texto merriweather" contenteditable="true"
-                    style="font-weight: 600; font-style: italic;">
+            <div class="muestra" data-weight="600" data-style="italic">
+                <div class="peso-texto">SemiBold Italic</div>
+                <div class="selector-texto merriweather" contenteditable="true">
                     Sempiterno crepúsculo donde todo termina, pero nada desaparece
                 </div>
                 <div class="botones">
@@ -611,9 +583,9 @@
             </div>
 
             <!-- Bold -->
-            <div class="muestra">
-                <div class="peso">Bold</div>
-                <div class="selector-texto merriweather" contenteditable="true" style="font-weight: 700;">
+            <div class="muestra" data-weight="700">
+                <div class="peso-texto">Bold</div>
+                <div class="selector-texto merriweather" contenteditable="true">
                     Sempiterno crepúsculo donde todo termina, pero nada desaparece
                 </div>
                 <div class="botones">
@@ -687,10 +659,9 @@
                 </div>
             </div>
             <!-- Bold Italic -->
-            <div class="muestra">
-                <div class="peso">Bold Italic</div>
-                <div class="selector-texto merriweather" contenteditable="true"
-                    style="font-weight: 700; font-style: italic;" data-state="corto">
+            <div class="muestra" data-weight="700" data-style="italic">
+                <div class="peso-texto">Bold Italic</div>
+                <div class="selector-texto merriweather" contenteditable="true">
                     Sempiterno crepúsculo donde todo termina, pero nada desaparece
                 </div>
                 <div class="botones">
@@ -765,9 +736,9 @@
             </div>
 
             <!-- Black -->
-            <div class="muestra">
-                <div class="peso">Black</div>
-                <div class="selector-texto merriweather" contenteditable="true" style="font-weight: 900;">
+            <div class="muestra" data-weight="900">
+                <div class="peso-texto">Black</div>
+                <div class="selector-texto merriweather" contenteditable="true">
                     Sempiterno crepúsculo donde todo termina, pero nada desaparece
                 </div>
                 <div class="botones">
@@ -842,10 +813,9 @@
             </div>
 
             <!-- Black Italic -->
-            <div class="muestra">
-                <div class="peso">Black Italic</div>
-                <div class="selector-texto merriweather" contenteditable="true"
-                    style="font-weight: 900; font-style: italic;">
+            <div class="muestra" data-weight="900" data-style="italic">
+                <div class="peso-texto">Black Italic</div>
+                <div class="selector-texto merriweather" contenteditable="true">
                     Sempiterno crepúsculo donde todo termina, pero nada desaparece
                 </div>
                 <div class="botones">
@@ -926,7 +896,7 @@
             <span>aaaaa</span>
         </section>
         <section id="obtener">
-
+            <img src="img/Recurso 5.webp" alt="obtener merriweather">
         </section>
     </main>
 

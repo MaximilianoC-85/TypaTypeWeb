@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wdth,wght@75..125,100..900&family=Funnel+Display:wght@100..900&family=Barlow:wght@100..900&family=Faustina:wght@100..900&family=Fira+Sans:wght@100..900&family=Fleur+De+Leah&family=Grenze+Gotisch:wght@100..900&family=Hachi+Maru+Pop&family=Inter:wght@100..900&family=Lato:wght@100..900&family=Manrope:wght@100..900&family=Merriweather:wght@100..900&family=Monoton&family=Mulish:wght@100..900&family=Noto+Serif:wght@100..900&family=Public+Sans:wght@100..900&family=Roboto:wght@100..900&family=Rosario:wght@100..900&family=Rubik:wght@100..900&family=Rye&family=Shantell+Sans:wght@100..900&family=Source+Serif+4:wght@100..900&family=Turret+Road:wght@100..900&family=Work+Sans:wght@100..900&family=Bungee&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -31,6 +33,7 @@ body {
   font-family: 'Encode Sans', sans-serif;
   font-weight: 600;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding-top: 23px;
 }
 .navbar.compact {
   flex-direction: row;
@@ -64,7 +67,7 @@ body {
   color: #000;
   list-style: none;
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -72,18 +75,16 @@ body {
   padding-left: 30px;
   margin-right: auto;
   /* empuja a los demás elementos al final */
-  font-family: 'merriweather', sans-serif;
-
 }
 
 .titulo-fuente {
-  font-family: 'merriweather', sans-serif;
+  font-family: 'merriweather', serif !important;
   font-size: 1.2rem;
 }
 
 .autor {
   font-size: 0.9rem;
-  color: gray;
+  font-style: normal !important;
 }
 
 .fonts-links li:not(.info-principal) {
@@ -155,13 +156,13 @@ body {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 2rem 1rem;
-  justify-content: center;
+  align-content: center;
 }
 
 .logo-central {
   display: flex;
   align-items: center;
-  height: 500px;
+  max-height: 500px;
 }
 
 
@@ -175,12 +176,17 @@ body {
 }
 
 .logo-central.tercero {
+  width: 80%;
+  height: 80%;
   margin-top: 70px;
 }
 
 .texto-nosotros {
-  margin-left: 20px;
-  flex: 1 1 400px;
+  padding-top: 40px;
+  padding-left: 150px;
+  display: flex;
+  height: 80%;
+  width: 80%;
 }
 
 .texto-nosotros h1 {
@@ -284,10 +290,12 @@ body {
 /* --------------------Contactos----------------------- */
 /* Sección contacto */
 .contacto {
+  flex-wrap: wrap;
   background-color: #000;
   color: #fff;
   padding: 4rem 2rem;
   font-family: 'encode sans', sans-serif;
+  align-content: start;
 }
 
 /* Título */
@@ -315,7 +323,7 @@ body {
 /* Formulario */
 .formulario-contacto {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -365,6 +373,7 @@ body {
 /* --------------------Fuentes----------------------- */
 /* Contenedor principal para posicionar */
 main.fuentes {
+  padding-top: 30px;
   position: relative;
   /* para posicionar hijos relativos a este */
   display: flex;
@@ -469,30 +478,6 @@ main.fuentes {
 }
 
 
-/* Panel lateral de filtro */
-.panel {
-  color: white;
-  margin-left: 10px;
-  width: 399px;
-  height: 479px;
-  background-color: #00A588;
-  padding: 1.5rem;
-  border-radius: 12px;
-  font-size: 12pt;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  font-family: 'encode sans', 'Regular';
-}
-
-.panel h3 {
-  font-weight: bold;
-  margin-bottom: 1rem;
-  font-size: 18pt;
-}
-
-.panel p {
-  line-height: 1.4;
-}
-
 /* ---------- Contenido Principal: fuentes ---------- */
 .fuentes-listado {
   flex: 1;
@@ -517,7 +502,10 @@ main.fuentes {
   border-bottom: 2px solid #00A588;
   padding-bottom: 20px;
 }
-
+.fuentes-listado li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
 /* ---------- Enlace de cada fuente ---------- */
 .fuente-link {
   text-decoration: none;
@@ -537,7 +525,8 @@ main.fuentes {
 }
 
 .merriweather {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
 }
 
 .roboto {
@@ -665,15 +654,12 @@ main.fuentes {
 
 .muestra {
   margin-bottom: 2rem;
-  background-color: #ffffff;
   padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
   position: relative;
+  font-family: 'merriweather', serif;
 }
 
 .peso {
-  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
@@ -683,73 +669,56 @@ main.fuentes {
   border-radius: 4px;
 }
 
-.boton-ajuste,
-.ajuste-opcion,
-.ajuste {
-  text-decoration: none;
-  background: transparent;
-  padding: 6px 12px;
-  font-size: 0.9rem;
-  color: #333;
-  border: 1px solid #ccc;
-  border-radius: 999px;
-  transition: background 0.2s ease;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.boton-ajuste:hover,
-.ajuste-opcion:hover,
-.ajuste:hover {
-  background-color: #eee;
-}
-
-.botones {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.color__section {
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 0;
+  border: none;
 }
 
-.ajuste-wrapper,
-.color-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.panel-cuerpo,
-.color-panel-texto,
-.color-panel-fondo {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 6px;
-  background: white;
-  border: 1px solid #ccc;
-  padding: 8px;
-  z-index: 20;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  border-radius: 6px;
-  white-space: nowrap;
-}
-
-.color-grid {
+.color__text p {
+  color: #000;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  align-items: center;
+  gap: 10px;
 }
 
-.color-option {
-  width: 24px;
-  height: 24px;
-  border: 1px solid #999;
+.flecha {
+  color: #d6007e;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.color__group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.color__options {
+  background-color: #eaeaea;
+  padding: 6px 6px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 36px);
+  gap: 10px;
+}
+
+.color__btn {
+  border: 1px solid #000;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.panel-cuerpo input {
-  margin-right: 6px;
+.color__btn:hover,
+.color__btn.selected {
+  outline: 2px solid #d6007e;
+  outline-offset: 2px;
 }
 
 .oculto {
@@ -847,8 +816,46 @@ main.fuentes {
 .merriweather section{
     min-height: 100vh; /* o al menos suficiente para hacer scroll */
     margin-top: 50px;
+    font-family: 'Merriweather', serif !important;
 
 }
+
+.logo-merriweather-container {
+  position: relative;
+  display: inline-block;
+  width: 250px; /* ajustalo según el tamaño deseado */
+  height: 70px;
+}
+
+.logo-merriweather-container .logo {
+  position: absolute;
+    padding: 7px 7px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.4s ease;
+}
+
+.logo-blanco {
+  opacity: 0;
+  z-index: 2;
+}
+
+.logo-negro {
+  z-index: 1;
+}
+
+/* Efecto al pasar el mouse */
+.logo-merriweather-container:hover .logo-blanco {
+  opacity: 1;
+}
+
+.logo-merriweather-container:hover .logo-negro {
+  opacity: 0;
+}
+
+
 .fonts-links a {
   font-family: 'encode sans', sans-serif;
   display: inline-block;
@@ -856,9 +863,13 @@ main.fuentes {
   color: #000;
   padding: 0.2rem 0.5rem;
   margin-bottom: 1px;
-  font-weight: lighter;
+  font-weight: bold;
   border-radius: 8px;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.fonts-links {
+    margin-right: 55px;
 }
 
 .fonts-links a:hover,
@@ -891,6 +902,9 @@ main.fuentes {
 .panel-alineacion.oculto {
   display: none;
 }
+.color__options.oculto{
+  display: none;
+}
 
 .panel-alineacion button {
   background: none;
@@ -905,4 +919,11 @@ main.fuentes {
 .panel-alineacion button:hover {
   background-color: #eee;
   border-radius: 4px;
+}
+#obtener{
+  height: 100vh;
+  background-color: #E6007E;
+}
+#obtener img{
+  width: 100%;
 }
